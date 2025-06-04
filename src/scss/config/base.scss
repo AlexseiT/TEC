@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: clip;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: #{$laptop + px};
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+    height: 100%;
+    &_fluid {
+        max-width: 100%;
+    }
+}
