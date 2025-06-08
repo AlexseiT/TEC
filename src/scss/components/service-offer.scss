@@ -1,0 +1,134 @@
+.service-offer {
+    padding-bottom: 90px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    &__title-block {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__button {
+    }
+
+    &__content {
+        display: flex;
+        gap: 36px;
+        align-items: stretch;
+    }
+
+    &__img-wrapper {
+        width: 40%;
+        height: 596px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 12px;
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: scale_anim 25s infinite;
+        pointer-events: none;
+        position: absolute;
+        transition: .5s;
+        opacity: 0;
+        &.active{
+            opacity: 1;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding: 16px 44px;
+        border-left: 2px solid #e6e6e6;
+        position: relative;
+        &:hover{
+            background-color: #E6E6E7;
+            border-left: 2px solid #E66410;
+            opacity: 1;
+            .service-offer__list-item-number{
+                color: #E66410;
+            }
+            .service-offer__list-item-ico{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+    &__list-item-number{
+        transition: .3s;
+    }
+    &__list-item-ico {
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition: .3s;
+        transform: translateX(-50px);
+    }
+}
+@include media($tablet) {
+    .service-offer {
+        &__img-wrapper {
+            display: none;
+        }
+        &__list{
+            width: 100%;
+        }
+        &__list-item-number{
+            display: none;
+        }
+        &__list-item{
+            padding: 18px 0;
+            border-left: none !important;
+            gap: 12px;
+        }
+        &__list-item-ico{
+            opacity: 1;
+            transform: translateX(0);
+            position: static;
+            margin-left: auto;
+        }
+        &__img{
+            animation: none;
+            opacity: 1 !important;
+        }
+        &__list-item-wrapper {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        &__title-block{
+            flex-direction: column;
+            align-items: start;
+            gap: 32px;
+        }
+        &__button{
+            width: 100%;
+        }
+    }
+}
+@include media($mobile) {
+
+}

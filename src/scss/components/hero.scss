@@ -64,24 +64,34 @@
     }
 
     &__slide-back-wrapper {
-        position: absolute;
+       /* position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
         z-index: 1;
-        filter: brightness(50%);
+        //filter: brightness(50%);
         height: 100%;
         img{
             pointer-events: none;
         }
+        */
+        height: 100%;
+        width: 100%;
+        img{
+            pointer-events: none;
+        }
+        margin-top: 60px;
     }
     &__slide-back-wrapper-part{
+        margin-top: 0px;
+        /*
         position: static;
         width: 100%;
         margin: 0;
         background-color: transparent;
         filter: none;
+        */
     }
     &__slide-back {
         width: 100%;
@@ -190,6 +200,39 @@
     &__advantages-card-text {
         color: #878789;
     }
+    &__slide-top-buttons{
+        flex-direction: column;
+    }
+    &__slide-top-button{
+        width: 100%;
+    }
 }
 
 
+@include media($tablet) {
+    .hero {
+       
+
+        &__slide-top {
+            flex-direction: column;
+            align-items: start;
+        }
+        &__slide-back-wrapper{
+            margin-top: 30px;
+        }
+        &__advantages{
+            bottom: -80px;
+            overflow: auto;
+        }
+        &__advantages-card{
+            width: fit-content;
+            flex-shrink: 0;
+        }
+        &__swiper-button{
+            display: none;
+        }
+        &__swiper-pagination{
+            display: none;
+        }
+    }
+}

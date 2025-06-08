@@ -1,6 +1,6 @@
 html, body {
     font-family: 'Onest', sans-serif;
-    color: #231F20;
+    color: #262626;
     //padding: 20px;
 }
 
@@ -24,6 +24,9 @@ a {
 		}
 }
 .text {
+    &_72 {
+        font-size: 72px;
+    }
     &_68 {
         font-size: 68px;
     }
@@ -46,7 +49,7 @@ a {
         font-size: 28px;
     }
     &_24 {
-        font-size: 20px;
+        font-size: 24px;
     }
     &_20 {
         font-size: 20px;
@@ -121,6 +124,13 @@ a {
             opacity: 1;
         }
     }
+    &_light{
+        background-color: #AFAFB1;
+        color: #262626;
+        &:hover{
+            opacity: 0.6;
+        }
+    }
     &_square{
         width: 40px;
         height: 40px;
@@ -162,13 +172,68 @@ a {
 }
 
 .section {
-    margin-top: 90px;
+    padding-top: 90px;
     &_first {
-        margin-top: 94px;
+        padding-top: 94px;
     }
 }
 
-@include media($laptop) {
+@include media($tablet) {
+    .section {
+        padding-top: 60px;
+        &_first {
+            padding-top: 64px;
+        }
+    }
+    .text_mobile {
+        &_72 {
+            font-size: 32px;
+        }
+        &_68{
+            font-size: 32px;
+        }
+        &_64 {
+            font-size: 32px;
+        }
+        &_56 {
+            font-size: 32px;
+        }
+        &_48 {
+            font-size: 32px;
+        }
+        &_40 {
+            font-size: 32px;
+        }
+        &_32 {
+            font-size: 32px;
+        }
+
+        &_28 {
+            font-size: 24px;
+        }
+        &_24 {
+            font-size: 20px;
+        }
+        &_20 {
+            font-size: 16px;
+        }
+        &_18 {
+            font-size: 16px;
+        }
+
+        &_16 {
+            font-size: 16px;
+        }
+        &_14 {
+            font-size: 14px;
+        }
+        &_12 {
+            font-size: 12px;
+        }
+    }
+}
+
+@include media($tablet) {
 
 }
 
@@ -180,4 +245,56 @@ a {
     .swiper-button-ico{
         transform: rotate(180deg);
     }
+}
+@keyframes scale_anim {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.swiper-pagination {
+		&__dots-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 6px;
+            margin-top: 50px;
+            .swiper-pagination-bullet{
+                transition: .3s;
+                width: 8px;
+                height: 8px;
+                border-radius: 50px;
+                background-color: #F5F5F6;
+            }
+            .swiper-pagination-bullet-active{
+                width: 10px;
+                height: 10px;
+                background-color: #878789;
+            }
+		}
+}
+.form {
+		&__input {
+
+			&_line {
+                background-color: transparent;
+                color: #878789;
+                border: none;
+                border-bottom: 1px solid #878789;
+                padding: 8px 0;
+                &::placeholder{
+                    color: #878789;
+                    opacity: 1;
+                }
+			}
+		}
 }

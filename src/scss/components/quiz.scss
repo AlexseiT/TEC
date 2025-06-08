@@ -1,0 +1,77 @@
+.quiz {
+    &__container {
+    }
+
+    &__form {
+    }
+
+    &__slide {
+        position: relative;
+        padding: 37px 80px;
+        height: 500px;
+        display: none;
+        flex-direction: column;
+        &.active{
+            display: flex;
+        }
+    }
+
+    &__title {
+        color: white;
+        max-width: 582px;
+        display: flex;
+    }
+
+    &__description {
+        color: white;
+        max-width: 582px;
+        display: flex;
+    }
+
+    &__grid {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 398px;
+    }
+
+    &__button {
+        width: 100%;
+        font-weight: 400;
+        &.active{
+            background-color: #E66410;
+        }
+    }
+    &__button-next{
+        width: 100%;
+        &_long{
+            grid-column: 1 / 3;
+        }
+    }
+    &__input {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute
+    }
+
+    &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.3);
+        border-radius: 16px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    &__slide-number{
+        font-weight: 300;
+        color: #878789;
+        margin-top: 52px;
+        display: flex;
+    }
+}

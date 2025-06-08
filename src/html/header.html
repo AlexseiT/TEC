@@ -1,27 +1,32 @@
 <header class="header">
     <div class="container header__container">
-        <div class = "header__top" uk-scrollspy="target: .fade-group; cls: uk-animation-fade; delay: 300">
+        <div class = "header__top">
             <a href = "/" class = "header__logo-wrapper fade-group"><img src="@img/icons/logo_main.svg" class="header__logo"></a>
-            <div class = "header__contacts-block fade-group">
+            <div id = "data-contact-first" class = "header__contacts-block fade-group">
                 <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "tel:+78002500740">8 800 2500 740</a>       
                 <span class = "text_14 header__contacts-text">Будни с 6.30 до 17.30 по Москве</span>
             </div>
-            <div class = "header__contacts-block fade-group">
+            <div id = "data-contact-second" class = "header__contacts-block fade-group">
                 <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "mailto:sale@azs.pro">sale@azs.pro</a>
                 <span class = "text_14 header__contacts-text">Ждем Ваши заказы и вопросы</span>
             </div>
-            <div class = "header__buttons">
+            <div id = "data-contact-button" class = "header__buttons">
                 <a class = "btn btn_square btn_opacity fade-group" href = "#" ><img src="@img/icons/tg.svg" class="btn_icon-main"></a>
                 <a class = "btn btn_square btn_opacity fade-group" href = "#" ><img src="@img/icons/wp.svg" class="btn_icon-main"></a>
                 <a class = "btn btn_medium btn_orange text_14 header__button fade-group" href = "#" >Обратный звонок</a>
+            </div>
+            <div id = "burger-button" class = "header__burger">
+                <span class = "header__burger-line"></span>
+                <span class = "header__burger-line"></span>
+                <span class = "header__burger-line"></span>
             </div>
         </div>
         <span class = "header__line"></span>
     </div>
 </header>
 
-<nav class = "header__bottom" uk-sticky="end: !body; offset: 94; show-on-up: true; animation: uk-animation-slide-top">
-    <div class="container header__bottom-container" uk-scrollspy="target: *:not(.header__search-input); cls: uk-animation-fade; delay: 100">
+<nav id = "data-menu" class = "header__bottom">
+    <div class="container header__bottom-container">
         <ul class = "header__menu">
             <li><a href = "/" >Каталог товаров</a></li>
             <li><a href = "/" >Услуги</a></li>
@@ -32,6 +37,9 @@
             <li><a href = "/" >Реализованные проекты</a></li>
             <li><a href = "/" >Вопрос ответ</a></li>
         </ul>
+        <div class = "include-item header__bottom-include" data-include="#data-contact-first"></div>
+        <div class = "include-item header__bottom-include" data-include="#data-contact-second"></div>
+        <div class = "include-item header__bottom-include" data-include="#data-contact-button"></div>
         <div class = "header__search-block">
             <input id = "search-input" class = "header__search-input" name = "search" placeholder = "Поиск по сайту">
             <button id = "search-button" class = "btn btn_square-icon btn_transparent"><img src="@img/icons/search.svg" class="btn_icon-main"></button>

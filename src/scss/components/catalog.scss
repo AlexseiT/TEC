@@ -1,0 +1,257 @@
+.catalog-offer {
+        background-color: #454446;
+        padding-bottom: 90px;
+		&__container {
+		}
+		&__title-block {
+            margin-bottom: 60px;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+		}
+		&__title {
+            color: white;
+            margin: 0;
+		}
+		&__button {
+            width: fit-content;
+            flex-shrink: 0;
+		}
+}
+
+.catalog {
+
+		&__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 32px;
+		}
+}
+.product {
+		&__card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #d0d0d0;
+            border-radius: 12px;
+            overflow: hidden;
+            &:hover{
+                opacity: 1;
+                 .product {
+                    &__card-content {
+                        background-color: #e6e6e6;
+                    }
+                    &__card-ico {
+                        path{
+                            stroke: #E66410;
+                        }
+                    };
+                    &__card-type {
+                       color: #6C6C6E;
+                    }
+                    &__card-title {
+                        color: #262626;
+                    }
+
+                    &__card-data-title {
+                        color: #6C6C6E;
+                    }
+
+                    &__card-data-value {
+                        color: #262626;
+                    }
+
+                    &__card-price-data {
+                    }
+
+                    &__card-price {
+                        color: #E66410;
+                    }
+                    &__card-img{
+                        transform: scale(1.2);
+                    }
+                }
+            }
+			&_dark {
+                border: 1px solid white;
+                 &:hover{
+                     .product {
+                        &__card-ico {
+                            path{
+                                stroke: #262626
+                            }
+                        };
+
+                        &__card-price {
+                            color: #262626;
+                        }
+                    }
+                 }
+                .product {
+     
+                    &__card-type {
+                    }
+
+                    &__card-title {
+                        color: white;
+                    }
+
+                    &__card-data-title {
+                    }
+
+                    &__card-data-value {
+                        color: white;
+                    }
+
+                    &__card-price-data {
+                    }
+
+                    &__card-price {
+                        color: white;
+                    }
+
+                    &__card-ico-wrapper {
+                    }
+
+                    &__card-ico {
+                        path{
+                            stroke: white;
+                        }
+                    }
+                }
+			}
+		}
+		&__card-img-wrapper {
+            height: 240px;
+            background-color: white;
+            position: relative;
+            padding: 25px;
+            overflow: hidden;
+		}
+
+		&__card-img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+		}
+
+		&__card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: auto;
+            background-color: #F0F5FF;
+            padding: 4px 8px;
+            color: #77A8F0;
+            border-radius: 8px;
+		}
+
+		&__card-content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+            transition: .3s;
+		}
+
+		&__card-type {
+            color: #AFAFB1;
+            transition: .3s;
+		}
+
+		&__card-title {
+            color: #262626;
+            margin-top: 5px;
+            margin-bottom: 13px;
+            transition: .3s;
+		}
+
+		&__card-data-row {
+            margin-top: 5px;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            flex-wrap: wrap;
+		}
+
+		&__card-data-title {
+            color: #AFAFB1;
+            transition: .3s;
+		}
+
+		&__card-data-value {
+            color: #262626;
+            transition: .3s;
+		}
+
+		&__card-price-block {
+            color: #262626;
+            padding-top: 16px;
+            margin-top: auto;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            transition: .3s;
+		}
+
+		&__card-price-data {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+		}
+
+		&__card-price {
+            color: #262626;
+            transition: .3s;
+		}
+
+		&__card-ico-wrapper {
+		}
+
+		&__card-ico {
+            path{
+                transition: .3s;
+                stroke: #262626;
+            }
+            g{
+                color: transparent;
+            }
+		}
+}
+@include media($laptop) {
+    .catalog {
+        &__grid {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+@include media($tablet) {
+    .catalog-offer {
+        &__container {
+        }
+        &__title-block {
+            align-items: start;
+            flex-direction: column;
+        }
+		&__button {
+            margin-top: 32px;
+            width: 100%;
+		}
+    }
+
+    .catalog {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@include media($mobile) {
+    .catalog {
+        &__grid {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

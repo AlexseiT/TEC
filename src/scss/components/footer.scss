@@ -1,3 +1,164 @@
-.footer{
-    height: 2000px;
+.footer {
+        background-color: #3C3C3D;
+        padding: 60px 0;
+        margin-top: 90px;
+		&__container {
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 32px;
+		}
+
+		&__column {
+            max-width: 220px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__logo-wrapper {
+            height: auto;
+            width: 100%;
+            display: flex;
+            margin-bottom: 52px;
+		}
+
+		&__logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+		}
+
+		&__contacts-block {
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+		}
+
+		&__contacts-link {
+            color: white;
+            &:hover{
+                color: #E66410;
+                opacity: 1;
+            }
+		}
+
+		&__contacts-text {
+            color: white;
+            opacity: 0.5;
+            weight: 300;
+		}
+
+		&__buttons {
+            display: flex;
+            gap: 8px;
+		}
+
+		&__button {
+		}
+
+		&__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                a{
+                    color: white;
+                    font-size: 14px;
+                    &:hover{
+                        color:#E66410;
+                        opacity: 1;
+                    }
+                }
+            }
+		}
+
+		&__form {
+            max-width: 350px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__form-title {
+            color: white;
+		}
+
+		&__form-description {
+            color: white;
+            margin: 16px 0;
+		}
+
+		&__form-button {
+            width: 100%;
+            margin-top: 28px;
+            font-weight: 300;
+		}
+        &__form-inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+		&__bottom {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 52px;
+            padding-top: 52px;
+            border-top: 1px solid #616161;
+		}
+
+		&__text {
+            color: #8a8a8a;
+            a{
+                color: #E66410;
+            }
+            &:nth-child(3){
+                margin-left: auto;
+            }
+		}
+}
+@include media($tablet) {
+    .footer {
+
+		&__bottom {
+            flex-direction: column;
+            align-items: start;
+		}
+		&__text {
+            &:nth-child(3){
+                margin-left: 0;
+            }
+		}
+    }
+}
+
+@include media($mobile) {
+    .footer {
+        padding: 40px 0;
+        &__logo{
+            width: 50%;
+        }
+        &__column{
+            max-width: 100%;
+        }
+        &__top {
+            flex-direction: column;
+        }
+
+      
+        &__form {
+            max-width: 100%;
+        }
+
+    }
 }
