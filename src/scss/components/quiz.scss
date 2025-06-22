@@ -1,5 +1,6 @@
 .quiz {
     &__container {
+        position: relative;
     }
 
     &__form {
@@ -11,6 +12,8 @@
         height: 500px;
         display: none;
         flex-direction: column;
+        overflow: hidden;
+        border-radius: 16px;
         &.active{
             display: flex;
         }
@@ -61,11 +64,11 @@
         height: 100%;
         object-fit: cover;
         filter: brightness(0.3);
-        border-radius: 16px;
         top: 0;
         left: 0;
         right: 0;
         z-index: -1;
+        animation: scale_anim 25s infinite;
     }
 
     &__slide-number{
@@ -73,5 +76,59 @@
         color: #878789;
         margin-top: 52px;
         display: flex;
+    }
+}
+.quiz {
+    &__img-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        width: 100%;
+        max-width: 390px;
+        top: -40px;
+        right: 80px;
+    }
+
+    &__img-card {
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 12px 16px 12px;
+        box-shadow: 0px 4px 40px 0px #0000000D;
+    }
+
+    &__img-card-img-wrapper {
+        height: 172px;
+    }
+
+    &__img-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    &__img-card-title{
+        margin-top: 24px;
+    }
+    &__img-card-description{
+        margin-top: 8px;
+    }
+}
+@include media($tablet) {
+    .quiz {
+        &__img-cards {
+            display: none;
+        }
+        &__grid{
+            max-width: 100%;
+        }
+        &__slide{
+            height: fit-content;
+        }
+        &__container {
+            padding: 0;
+        }
     }
 }

@@ -2,6 +2,7 @@ html, body {
     font-family: 'Onest', sans-serif;
     color: #262626;
     //padding: 20px;
+    padding-right: 0px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -115,6 +116,15 @@ a {
             background-color: #F79B40;
             opacity: 1;
         }
+        &_light{
+            color: #E66410;
+            background-color: #FEEFD6;
+            &:hover{
+                color: #FEEFD6;
+                background-color: #E66410;
+                opacity: 1;
+            }
+        }
     }
     &_opacity{
         background-color: #FFFFFF1A;
@@ -205,7 +215,7 @@ a {
             font-size: 32px;
         }
         &_32 {
-            font-size: 32px;
+            font-size: 24px;
         }
 
         &_28 {
@@ -296,5 +306,75 @@ a {
                     opacity: 1;
                 }
 			}
+            &_opacity{
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #878789;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                &::placeholder{
+                    color: #878789;
+                    opacity: 1;
+                }
+            }
 		}
+        &__input-textarea{
+            height: 100px;
+        }
+}
+.input-file{
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.button-text-file{
+    white-space: nowrap;       
+    overflow: hidden;          
+    text-overflow: ellipsis;  
+    display: inline-block;     
+    max-width: 100%;           
+    vertical-align: middle;   
+}
+.swiper-pagination__dots-group.swiper-pagination-lock{
+    display: none;
+}
+
+
+.btn-up{
+    z-index: 100;
+    cursor: pointer;
+    padding: 14px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(230, 100, 16);;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    flex-shrink: 0;
+}
+.btn-up.active{
+    opacity: 1;
+    pointer-events: unset;
+}
+.btn-up:hover{
+    opacity: 0.5;
+}
+.btn-up:hover img{
+
+}
+.btn-up img{
+    transition: .3s;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-45deg);
+    margin-right: 2px;
 }

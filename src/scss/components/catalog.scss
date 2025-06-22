@@ -1,4 +1,5 @@
 .catalog-offer {
+        overflow: hidden;
         background-color: #454446;
         padding-bottom: 90px;
 		&__container {
@@ -250,8 +251,16 @@
 @include media($mobile) {
     .catalog {
         &__grid {
-            display: flex;
-            flex-direction: column;
+            /*display: flex;
+            flex-direction: column;*/
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 5px;
         }
+    }
+    .product__card-title{
+        font-weight: 600;
+    }
+    .product__card-img-wrapper{
+        height: 200px;
     }
 }

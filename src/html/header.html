@@ -3,11 +3,11 @@
         <div class = "header__top">
             <a href = "/" class = "header__logo-wrapper fade-group"><img src="@img/icons/logo_main.svg" class="header__logo"></a>
             <div id = "data-contact-first" class = "header__contacts-block fade-group">
-                <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "tel:+78002500740">8 800 2500 740</a>       
-                <span class = "text_14 header__contacts-text">Будни с 6.30 до 17.30 по Москве</span>
+                <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "tel:+78005504630">8 (800) 550-46-30</a>       
+                <span class = "text_14 header__contacts-text">Будни с 9:00 до 18:00 по Москве</span>
             </div>
             <div id = "data-contact-second" class = "header__contacts-block fade-group">
-                <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "mailto:sale@azs.pro">sale@azs.pro</a>
+                <a class = "text_20 text_semibold text_manrope header__contacts-link" href = "mailto:sale@tekengi.ru">sale@tekengi.ru</a>
                 <span class = "text_14 header__contacts-text">Ждем Ваши заказы и вопросы</span>
             </div>
             <div id = "data-contact-button" class = "header__buttons">
@@ -26,10 +26,18 @@
 </header>
 
 <nav id = "data-menu" class = "header__bottom">
-    <div class="container header__bottom-container">
+    <div class = "header__bottom-mobile-up">
+        <div class = "include-item header__bottom-include" data-include="#search-block"></div>
+        <div id = "burger-button-close" class = "header__burger active burger-button-close">
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+        </div>
+    </div>
+    <div class="container header__bottom-container toggle-group">
         <ul class = "header__menu">
-            <li><a href = "/" >Каталог товаров</a></li>
-            <li><a href = "/" >Услуги</a></li>
+            <li><a class = "toggle-button" data-target-id="#menu-category">Каталог товаров</a></li>
+            <li><a class = "toggle-button" data-target-id="#menu-category-service" >Услуги</a></li>
             <li><a href = "/" >О нас</a></li>
             <li><a href = "/" >Контакты</a></li>
             <li><a href = "/" >Отзывы</a></li>
@@ -37,12 +45,133 @@
             <li><a href = "/" >Реализованные проекты</a></li>
             <li><a href = "/" >Вопрос ответ</a></li>
         </ul>
-        <div class = "include-item header__bottom-include" data-include="#data-contact-first"></div>
-        <div class = "include-item header__bottom-include" data-include="#data-contact-second"></div>
-        <div class = "include-item header__bottom-include" data-include="#data-contact-button"></div>
-        <div class = "header__search-block">
+
+        <div class = "include-item header__bottom-include header__bottom-include-button" data-include="#data-contact-button"></div>
+
+        <div class = "include-item header__bottom-include-contact_first" data-include="#data-contact-first"></div>
+
+        <div class = "include-item header__bottom-include-contact_second" data-include="#data-contact-second"></div>
+
+        <div id = "search-block" class = "header__search-block">
             <input id = "search-input" class = "header__search-input" name = "search" placeholder = "Поиск по сайту">
             <button id = "search-button" class = "btn btn_square-icon btn_transparent"><img src="@img/icons/search.svg" class="btn_icon-main"></button>
         </div>
+
+        <div class = "header__bottom-mobile-bottom text_14">
+            <span class = "footer__text">© Copyright 2017-2025</span>
+            <span class = "footer__text">ООО "АЗС Комплект". При использовании любых материалов прямая ссылка на сайт обязательна.</span>
+            <span class = "footer__text">Сайт разработан в <a>SEO Lebedev</a></span>
+        </div>
+    </div>
+</nav>
+<nav id = "menu-category" class = "menu-category">
+    <div class = "header__bottom-mobile-up">
+        <div class = "menu-category__buton-arrow button-menu-back" id = "button-menu-back" ><img src="@img/icons/icon-arrow-back.svg"></div>
+        <div id = "burger-button-close" class = "header__burger active burger-button-close">
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+        </div>
+    </div>
+    <div class="container menu-category__container-title">
+        <span class = "text_20 text_manrope text_semibold">Каталог товаров</span>
+    </div>
+    <div class="container menu-category__grid">
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Фильтрационное оборудование</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item.png" alt = ""></div>
+        </a>
+
+    </div>
+</nav>
+<nav id = "menu-category-service" class = "menu-category">
+    <div class = "header__bottom-mobile-up">
+        <div class = "menu-category__buton-arrow button-menu-back" id = "button-menu-back" ><img src="@img/icons/icon-arrow-back.svg"></div>
+        <div id = "burger-button-close" class = "header__burger active burger-button-close">
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+            <span class = "header__burger-line"></span>
+        </div>
+    </div>
+    <div class="container menu-category__container-title">
+        <span class = "text_20 text_manrope text_semibold">Услуги</span>
+    </div>
+    <div class="container menu-category__grid">
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
+        <a href = "/" class = "menu-category__item">
+            <span class = "text_16 text_mobile_16 menu-category__item-title">Строительство АЗС</span>
+            <div class = "menu-category__item-wrapper"><img src="@img/menu-item-1.jpg" alt = ""></div>
+        </a>
     </div>
 </nav>
