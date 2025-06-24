@@ -1,0 +1,217 @@
+.product {
+    padding-top: 40px;
+    &__container {
+        display: flex;
+        gap: 56px;
+
+    }
+
+    &__gallery {
+                width: 43%;
+                flex: 0 0 43%;
+    }
+
+    &__main-swiper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        height: 420px;
+        border: 1px solid rgba(230, 230, 231, 1);
+        .swiper-slide{
+            width: 100%;
+            height: 100%;
+            padding: 46px 64px;
+            transition: .3s;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__swiper-button-prev {
+        position: absolute;
+        z-index: 100;
+        left: 10px;
+        cursor: pointer;
+    }
+
+    &__swiper-button-next {
+        position: absolute;
+        z-index: 100;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    &__thumbs-swiper {
+        margin-top: 12px;
+        height: 80px;
+        .swiper-slide{
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            transition: .3s;
+            border: 1px solid rgba(230, 230, 231, 1);
+            border-radius: 8px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                opacity: 0.5;
+                transition: .3s;
+            }
+            &:hover{
+                border: 1px solid rgba(250, 193, 119, 1);
+                img{
+                    opacity: 1;
+                }
+            }
+        }
+        .swiper-slide-active{
+            border: 1px solid rgba(250, 193, 119, 1);
+            img{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__content {
+        width: 57%;
+        flex: 0 0 57%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__description {
+    }
+
+    &__description-grids {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__description-card {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__description-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50px;
+        background-color: rgba(254, 239, 214, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__description-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; 
+        max-width: 457px;
+    }
+
+    &__description-content-title {
+    }
+
+    &__description-content-text {
+        color: rgba(108, 108, 110, 1);
+    }
+
+    &__files {
+        margin-top: 32px;
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    &__file {
+        display: flex;
+        gap: 12px;
+        &:hover{
+            .product__file-icon-tag{
+                color: rgba(230, 100, 16, 1);
+                background-color: white;
+            }
+        }
+    }
+
+    &__file-icon {
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__file-icon-tag {
+        position: absolute;
+        background-color: rgba(230, 100, 16, 1);
+        border: 1px solid rgba(230, 100, 16, 1);
+        border-radius: 5px;
+        padding: 3px;
+        color: white;
+        bottom: 7px;
+        left: -6px;
+        transition: .3s;
+        white-space: nowrap;
+    }
+
+    &__file-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__file-content-title {
+        color: rgba(38, 38, 38, 1);
+        border-bottom: 1px solid rgba(38, 38, 38, 1);
+    }
+
+    &__file-content-volume {
+        margin-top: auto;
+        color: rgba(175, 175, 177, 1);
+    }
+
+    &__price-block {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 32px;
+        padding-top: 32px;
+        border-top: 1px solid rgba(208, 208, 209, 1);
+        margin-top: 32px;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__price-title {
+        font-weight: 300;
+        color: rgba(108, 108, 110, 1);
+    }
+
+    &__price-value {
+    }
+}
+.specifications{
+    background-color: rgba(69, 68, 70, 1);
+    margin-top: 60px;
+    padding: 90px 0;
+    .product {
+        &__file-content-title {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+    }
+}

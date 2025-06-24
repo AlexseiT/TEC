@@ -4,7 +4,28 @@ const isMobile = document.documentElement.clientWidth < 768;
 const isTablet = document.documentElement.clientWidth < 1100;
 const isLaptop = document.documentElement.clientWidth < 1408;
 const scrollParam = 50;
+function number_format(number, decimals, dec_point, thousands_sep) {
 
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
 function checkScroll() {
     if (window.scrollY > scrollParam) {
         return true;
@@ -486,6 +507,220 @@ function menuCategoryNormalize()
     });
   
 }
+/* Фильтры */
+function initRangeFilterItemController()
+{
+    let filter_names = ["price"];
+    filter_names.forEach(name => {
+        let filter = document.getElementById(name);
+        if (filter)
+        {   
+            let track = filter.querySelector(".slider-track");
+            let input_min = document.getElementById(name+"_min");
+            let input_max = document.getElementById(name+"_max");
+            let input_min_end = document.getElementById(name+"_end_min");
+            let input_max_end = document.getElementById(name+"_end_max");
+            let text_min = document.getElementById(name+"_min_text");
+            let text_max = document.getElementById(name+"_max_text");
+            let gap = 0;
+            let min_value = parseInt(input_min_end.value);
+            let max_value = parseInt(input_max_end.value);
+            let around_value = (min_value + max_value) / 2;
+
+            function ValueNormalize(sliderValue) {
+                let normalizedValue;
+                if (max_value > 1000000) {
+                    if (sliderValue <= 80) {
+                        normalizedValue = min_value + (sliderValue / 80) * (2000000 - min_value);
+                        normalizedValue = Math.round(normalizedValue / 10000) * 10000;
+                    } else {
+                        normalizedValue = 2000000 + ((sliderValue - 80) / 20) * (max_value - 2000000);
+                        normalizedValue = Math.round(normalizedValue / 100000) * 100000;
+                    }
+                } else {
+                    normalizedValue = min_value + (sliderValue / 100) * (max_value - min_value);
+                    if (max_value - min_value > 100000) {
+                        normalizedValue = Math.round(normalizedValue / 10000) * 10000;
+                    } else {
+                        normalizedValue = Math.round(normalizedValue / 1000) * 1000;
+                    }
+                }
+  
+                return Math.max(min_value, Math.min(max_value, normalizedValue));
+            }
+
+            function Min()
+            {
+                let value = 0;
+                if(parseInt(input_max.value) - parseInt(input_min.value) <= gap){
+                    value = parseInt(input_max.value) + gap;
+                    value = ValueNormalize(value);
+                    input_min_end.value = value;
+                    value = number_format(value, 0, ",", " ");
+                    input_min.value = parseInt(input_max.value);
+                }
+                else
+                {
+                    value = parseInt(input_min.value);
+                    value = ValueNormalize(value);
+                    input_min_end.value = value;
+                    value = number_format(value, 0, ",", " ");
+                }
+                text_min.innerHTML = value;
+                let percent1 = 0;
+                if(input_min.value != input_min.min){
+                    percent1 = ( (input_min.value - input_min.min ) / (input_max.max - input_min.min) ) * 100;
+                }
+                let percent2 = 100;
+                if(input_max.value != input_max.max){
+                    percent2 = ( (input_max.value - input_min.min ) / (input_max.max - input_min.min) ) * 100;
+                }
+                track.style.background = `linear-gradient(to right, rgba(0, 0, 0, 0.1) ${percent1}% , rgba(230, 100, 16, 1) ${percent1}% , rgba(230, 100, 16, 1) ${percent2}%, rgba(0, 0, 0, 0.1) ${percent2}%)`;
+            }
+            function Max()
+            {
+                
+                let value = 0;
+                if(parseInt(input_max.value) - parseInt(input_min.value) <= gap){
+                    value = parseInt(input_min.value) + gap;
+                    value = ValueNormalize(value);
+                    input_max_end.value = value;
+                    value = number_format(value, 0, ",", " ");
+                    input_max.value = parseInt(input_min.value);
+                }
+                else
+                {
+                    value = parseInt(input_max.value);
+                    value = ValueNormalize(value);
+                    input_max_end.value = value;
+                    value = number_format(value, 0, ",", " ");
+                }
+
+                text_max.innerHTML = value;
+                let percent1 = 0;
+                if(input_min.value != input_min.min){
+                    percent1 = ( (input_min.value - input_min.min ) / (input_max.max - input_min.min) ) * 100;
+                }
+                let percent2 = 100;
+                if(input_max.value != input_max.max){
+                    percent2 = ( (input_max.value - input_min.min ) / (input_max.max - input_min.min) ) * 100;
+                }
+                track.style.background = `linear-gradient(to right, rgba(0, 0, 0, 0.1)${percent1}% , rgba(230, 100, 16, 1)${percent1}% , rgba(230, 100, 16, 1) ${percent2}%, rgba(0, 0, 0, 0.1) ${percent2}%)`;
+
+            }
+
+            input_min.addEventListener('input', (event) => {
+                Min();
+            });
+            input_max.addEventListener('input', (event) => {
+                Max();
+            });
+
+            Min();
+            Max();
+        }
+    });
+}
+function selectFilterItemController()
+{
+    let filter_names = ["size", "power", "material"];
+    filter_names.forEach(name => {
+        let filter = document.getElementById(name);
+        if (filter)
+        {   
+            let input = filter.querySelector("input");
+            let text_input = document.getElementById(name+"_filter_input")
+            let buttons = filter.querySelectorAll("li");
+            buttons.forEach(button => {
+                if (button.classList.contains("value-all"))
+                {
+                    button.addEventListener('click', (event) => {
+                        input.value = "";
+                        let actives = filter.querySelectorAll(".filter-button_active");
+                        actives.forEach(active => {
+                            active.classList.remove("filter-button_active");
+                        });
+                        button.classList.add("filter-button_active");
+                    });
+                }
+                else
+                {
+                    let value = button.getAttribute("data-value");
+                    let button_all = filter.querySelector(".value-all");
+                    button.addEventListener('click', (event) => {
+                        input.value = "";
+                        if (button.classList.contains("filter-button_active"))
+                        {
+                            button.classList.remove("filter-button_active");
+                        }
+                        else
+                        {
+                            button.classList.add("filter-button_active");
+                            if (button_all)
+                            {
+                                button_all.classList.remove("filter-button_active");
+                            }
+                        }
+                        let actives = filter.querySelectorAll(".filter-button_active");
+                        if (text_input) text_input.value = "";
+                        let check = true;
+                        actives.forEach(item => {
+                            let symbol = ", ";
+                            if (check)
+                            {
+                                check = false;
+                                symbol = "";
+                            }
+                            if (text_input) text_input.value += symbol + item.getAttribute("data-value");
+                            input.value += symbol + item.getAttribute("data-value");
+                        });
+                    });
+                }
+            });
+        }
+    });
+}
+/* Слайдеры товаров */
+function initProductSliders()
+{
+    const mainSwiper = new Swiper('.product__main-swiper', {
+        loop: true,
+        spaceBetween: 32,
+        navigation: {
+        nextEl: '.product__swiper-button-next',
+        prevEl: '.product__swiper-button-prev',
+        },
+    });
+
+    const thumbsSwiper = new Swiper('.product__thumbs-swiper', {
+        //loop: true,
+        spaceBetween: 8,
+        slidesPerView: 6,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+        320: {
+            slidesPerView: 3,
+        },
+        768: {
+            slidesPerView: 4,
+        },
+        1100: {
+            slidesPerView: 6,
+        }
+        }
+    });
+
+    mainSwiper.controller.control = thumbsSwiper;
+    thumbsSwiper.controller.control = mainSwiper;
+
+    document.querySelectorAll('.product__thumbs-swiper .swiper-slide').forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            mainSwiper.slideTo(index);
+        });
+    });
+
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     initAdaptiveScrollHeader();
     initSliders();
@@ -504,4 +739,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     initButtonUp();
     menuCategoryNormalize();
+    initRangeFilterItemController();
+    selectFilterItemController();
+    initProductSliders();
 });

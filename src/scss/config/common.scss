@@ -378,3 +378,13 @@ a {
     transform: rotate(-45deg);
     margin-right: 2px;
 }
+
+.title-section {
+
+		&__container {
+		}
+
+		&__title {
+            margin: 0;
+		}
+}

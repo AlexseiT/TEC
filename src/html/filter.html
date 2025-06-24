@@ -1,0 +1,94 @@
+<section class = "section_first">
+    <div class = "container">
+        <h1 class = "text_56 text_semibold">Фильтрационное оборудование</h1>
+    </div>
+</section>
+
+<section class = "catalog-filter">
+    <div class = "container catalog-filter__container">
+
+        <form id = "filter" class="catalog-filter__form" action="" method="POST">
+            <div class="catalog-filter__row">
+                <div class="catalog-filter__block" id = "price">
+                    <div class = "catalog-filter__prefix text_14">
+                        <span>Цена от</span>
+                        <span>Цена до</span>
+                    </div>
+                    <div class="catalog-filter__input-select text_16">
+                        <div class = "catalog-filter__price-input">
+                            <div class = "catalog-filter__price-input-text">
+                                <span id = "price_min_text">2 499</span> 
+                                <span id = "price_min_val">руб</span> 
+                            </div>
+                            <div class = "catalog-filter__price-input-text">
+                                <span id = "price_max_text">100 000</span> 
+                                <span id = "price_max_val">руб</span>
+                            </div>
+                        </div>
+                    
+                        <div class = "catalog-filter__range-input-block">
+                            <div class="slider-track"></div>
+                            <input id = "price_end_min" name="price_min" value = "2499" hidden> <!--INPUT HERE-->
+                            <input id = "price_end_max" name="price_max" value = "100000" hidden> <!--INPUT HERE-->
+                            <input id = "price_min" class="catalog-filter__range catalog-filter__range_min" type="range" value="0" min="0" max="100" step="1" aria-label="Range">
+                            <input id = "price_max" class="catalog-filter__range catalog-filter__range_max" type="range" value="100" min="0" max="100" step="1" aria-label="Range">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-filter__block size_filter">
+                    <span class = "catalog-filter__prefix text_14">Размер</span>
+                    <div class="catalog-filter__input">
+                        <input id = "size_filter_input" class = "text_16" value = "" placeholder="Все" readonly="readonly">
+                        <img class="catalog-filter__input-icon" src="@img/icons/arrow-selector.svg" alt = "icon" uk-svg>
+                    </div>
+                    <div uk-dropdown="pos: bottom-center; mode: click;" class="catalog-filter__dropdown">
+                        <ul id = "size" class="text_16 uk-dropdown-nav uk-nav">
+                            <input name="size" readonly="readonly" type = "hidden"> <!--INPUT HERE-->
+                            <li class="uk-active" data-value="Название" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название</li>
+                            <li class="uk-active" data-value="Название 1" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 1</li>
+                            <li class="uk-active" data-value="Название 2" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 2</li>
+                            <li class="uk-active" data-value="Название 3" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="catalog-filter__block power_filter">
+                    <span class = "catalog-filter__prefix text_14">Мощность</span>
+                    <div class="catalog-filter__input">
+                        <input id = "power_filter_input" class = "text_16" value = "" placeholder="Все" readonly="readonly">
+                        <img class="catalog-filter__input-icon" src="@img/icons/arrow-selector.svg" alt = "icon" uk-svg>
+                    </div>
+                    <div uk-dropdown="pos: bottom-center; mode: click;" class="catalog-filter__dropdown">
+                        <ul id = "power" class="text_16 uk-dropdown-nav uk-nav">
+                            <input name="power" readonly="readonly" type = "hidden"> <!--INPUT HERE-->
+                            <li class="uk-active" data-value="Название" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название</li>
+                            <li class="uk-active" data-value="Название 1" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 1</li>
+                            <li class="uk-active" data-value="Название 2" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 2</li>
+                            <li class="uk-active" data-value="Название 3" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="catalog-filter__block material_filter">
+                    <span class = "catalog-filter__prefix text_14">Материал</span>
+                    <div class="catalog-filter__input">
+                        <input id = "material_filter_input" class = "text_16" value = "" placeholder="Любой" readonly="readonly">
+                        <img class="catalog-filter__input-icon" src="@img/icons/arrow-selector.svg" alt = "icon" uk-svg>
+                    </div>
+                    <div uk-dropdown="pos: bottom-center; mode: click;" class="catalog-filter__dropdown">
+                        <ul id = "material" class="text_16 uk-dropdown-nav uk-nav">
+                            <input name="material" readonly="readonly" type = "hidden"> <!--INPUT HERE-->
+                            <li class="uk-active" data-value="Название" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название</li>
+                            <li class="uk-active" data-value="Название 1" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 1</li>
+                            <li class="uk-active" data-value="Название 2" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 2</li>
+                            <li class="uk-active" data-value="Название 3" ><div class = "filter-button-box"><img src = "@img/icons/checkbox.svg"></div>Название 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+
