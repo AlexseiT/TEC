@@ -110,23 +110,31 @@ function initSliders() {
             }
         }
     });
-    window.documentsSlider = new Swiper('.documents__swiper', {
-        spaceBetween: 20,
-        slidesPerView: 1,
-        thumbs: {
-            swiper: window.decisionsSlider
-        },
-        pagination: {
-            el: '.documents__swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            1100: {
-                slidesPerView: 3,
+    let documents__swipers = document.querySelectorAll(".documents__swiper");
+
+    documents__swipers.forEach(documents__swiper => {
+        let pagin = documents__swiper.querySelector(".documents__swiper-pagination");
+        let slider = new Swiper(documents__swiper, {
+            spaceBetween: 0,
+            slidesPerView: 2,
+            /*thumbs: {
+                swiper: window.decisionsSlider
+            },*/
+            pagination: {
+                el: pagin,
+                clickable: true,
+            },
+            breakpoints: {
+                1100: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
             }
-        }
+        });
+        //window.documentsSlider
     });
-        window.contactsPersonSlider = new Swiper('.contacts-block__swiper', {
+
+    window.contactsPersonSlider = new Swiper('.contacts-block__swiper', {
         spaceBetween: 32,
         slidesPerView: 1,
         thumbs: {

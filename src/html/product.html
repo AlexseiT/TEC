@@ -1,6 +1,6 @@
 <section class = "title-section section_first">
     <div class = "container title-section__container">
-        <h1 class = "title-section__title text_semibold text_56 text_manrope">Адаптер фильтра АВ-1 - 1</h1>
+        <h1 class = "title-section__title text_semibold text_56 text_mobile_56 text_manrope">Адаптер фильтра АВ-1 - 1</h1>
     </div>
 </section>
 <!--Главная-->
@@ -109,15 +109,19 @@
                     <span class = "product__price-value text_32 text_manrope text_semibold">1 213 руб.</span>
                 </div>
                 <a class="text_14 btn btn_medium fade-group btn_orange" href="#">Оставить заявку</a>
+                <span class="text_14 btn btn_medium fade-group btn_orange_light product__button-specifications toggle-button" data-target-id = "#specifications">
+                    <span>Смотреть подробнее</span>
+                    <span>Скрыть</span>
+                </span>
             </div>
         </div>
     </div>
 </section>
 <!--Характеристики-->
-<section class = "specifications">
+<section id = "specifications" class = "specifications">
     <div class = "container specifications__container">
         <div class = "specifications__title-content">
-            <h2 class = "specifications__title text_56 text_manrope text_semibold">Технические характеристики</h2>
+            <h2 class = "specifications__title text_56 text_mobile_56 text_manrope text_semibold">Технические характеристики</h2>
             <div class = "product__files">
                 <a href = "/" class = "product__file">
                     <div class = "product__file-icon">
@@ -135,26 +139,32 @@
             <div class = "specifications__grid">
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Размер</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">250х250</span>
                 </div>
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Мощность</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">1 000 Вт</span>
                 </div>
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Давление</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">2 000</span>
                 </div>
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Мощность</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">1 000 Вт</span>
                 </div>
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Давление</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">2000</span>
                 </div>
                 <div class = "specifications__grid-card">
                     <span class = "text_14 specifications__grid-card-title">Материал</span>
+                    <div class = "specifications__line"></div>
                     <span class = "text_24 text_manrope text_manrope text_semibold specifications__grid-card-value">Металлоконструкция</span>
                 </div>
             </div>
@@ -171,4 +181,109 @@
             </div>
         </div>
     </div>
+</section>
+<!--Документы-->
+<section class = "documents section">
+    <div class = "container documents__container">
+         <h2 class = "documents__title text_semibold text_56 text_mobile_56 text_manrope">Документация</h2>
+         <div class = "documents__content">
+            <ul class="documents__tabs text_18" uk-switcher>
+                <li class = "documents__tab"><a href="#">Сертификаты соответствия</a></li>
+                <li class = "documents__tab"><a href="#">Паспорт изделия</a></li>
+                <li class = "documents__tab"><a href="#">Инструкции по эксплуатации</a></li>
+                <li class = "documents__tab"><a href="#">Чертежи и проектная документация</a></li>
+            </ul>
+
+            <div class="uk-switcher documents__tabs-content">
+                <div class="swiper documents__swiper">
+
+                    <div class="swiper-wrapper documents__swiper-wrapper">
+
+                        <a href = "/" class="swiper-slide documents__card">
+                            <div class = "documents__card-file-wrapper">
+                                <div class = "product__file-icon">
+                                    <img src = "@img/icons/file.svg">
+                                    <span class = "product__file-icon-tag text_12 text_semibold">PDF</span>
+                                </div>
+                            </div>
+                            <span class = "text_18 text_mobile_18 text_semibold documents__card-title">Документ</span>
+                            <span class = "text_16 text_mobile_16 documents__card-description">Покупка и продажа земельных участков</span>
+                            <div class = "documents__card-bottom">
+                                <span class = "documents__card-bottom-text text_16 text_mobile_16">Смотреть документ</span>
+                                <div class = "documents__card-ico-wrapper"><img src="@img/icons/link-arrow.svg" class="documents__card-ico" uk-svg></div>
+                            </div>
+                        </a>
+                        <a href = "/" class="swiper-slide documents__card">
+                            <div class = "documents__card-file-wrapper">
+                                <div class = "product__file-icon">
+                                    <img src = "@img/icons/file.svg">
+                                    <span class = "product__file-icon-tag text_12 text_semibold">PDF</span>
+                                </div>
+                            </div>
+                            <span class = "text_18 text_mobile_18 text_semibold documents__card-title">Документ</span>
+                            <span class = "text_16 text_mobile_16 documents__card-description">Покупка и продажа земельных участков</span>
+                            <div class = "documents__card-bottom">
+                                <span class = "documents__card-bottom-text text_16 text_mobile_16">Смотреть документ</span>
+                                <div class = "documents__card-ico-wrapper"><img src="@img/icons/link-arrow.svg" class="documents__card-ico" uk-svg></div>
+                            </div>
+                        </a>
+                        <a href = "/" class="swiper-slide documents__card">
+                            <div class = "documents__card-file-wrapper">
+                                <div class = "product__file-icon">
+                                    <img src = "@img/icons/file.svg">
+                                    <span class = "product__file-icon-tag text_12 text_semibold">PDF</span>
+                                </div>
+                            </div>
+                            <span class = "text_18 text_mobile_18 text_semibold documents__card-title">Документ</span>
+                            <span class = "text_16 text_mobile_16 documents__card-description">Покупка и продажа земельных участков</span>
+                            <div class = "documents__card-bottom">
+                                <span class = "documents__card-bottom-text text_16 text_mobile_16">Смотреть документ</span>
+                                <div class = "documents__card-ico-wrapper"><img src="@img/icons/link-arrow.svg" class="documents__card-ico" uk-svg></div>
+                            </div>
+                        </a>
+                        <a href = "/" class="swiper-slide documents__card">
+                            <div class = "documents__card-file-wrapper">
+                                <div class = "product__file-icon">
+                                    <img src = "@img/icons/file.svg">
+                                    <span class = "product__file-icon-tag text_12 text_semibold">PDF</span>
+                                </div>
+                            </div>
+                            <span class = "text_18 text_mobile_18 text_semibold documents__card-title">Документ</span>
+                            <span class = "text_16 text_mobile_16 documents__card-description">Покупка и продажа земельных участков</span>
+                            <div class = "documents__card-bottom">
+                                <span class = "documents__card-bottom-text text_16 text_mobile_16">Смотреть документ</span>
+                                <div class = "documents__card-ico-wrapper"><img src="@img/icons/link-arrow.svg" class="documents__card-ico" uk-svg></div>
+                            </div>
+                        </a>                                                                  
+                    </div>
+
+                    <div class="swiper-pagination documents__swiper-pagination swiper-pagination__dots-group"></div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+         </div>
+    </div>
+</section>
+<!--Форма-->
+<section class = "form-block">
+    <div class = "container form-block__container">
+        <div class = "form-block__img-wrapper"><img src="@img/form-block-img.jpg" class="form-block__img"></div>
+        <form action = "/" class = "form form-block__form">
+            <span class = "form-block__form-title text_48 text_mobile_48 text_semibold text_manrope">Получить подробную информацию</span>
+            <span class = "form-block__form-description text_20">Оставьте заявку и наши специалисты свяжутся с Вами в ближайшее время.</span>
+            <div class = "form-block__form-inputs">
+                <input class = "form__input form__input_opacity form-block__form-input-double" name = "name" placeholder = "ФИО*" required>
+                <input class = "form__input form__input_opacity" name = "phone" placeholder = "Email*" required>
+                <input class = "form__input form__input_opacity" name = "phone" placeholder = "Телефон">
+                <textarea class = "form__input form__input_opacity form__input-textarea form-block__form-input-double" placeholder="Комментарий"></textarea>
+            </div>
+            <div class = "form-block__form-buttons">
+                <label class = "btn btn_medium btn_orange_light text_14 form-block__form-button fade-group button-file"><span class = "form-block__button-text-file button-text-file">Прикрепить файл</span><input class = "input-file" type="file" name="file" placeholder="Прикрепить файл"></label>
+                <button class = "btn btn_medium btn_orange text_14 form-block__form-button fade-group">Оставить заявку</button>
+            </div>
+        </form>
+    </div>
+    <img src="@img/form-block-back.jpg" class="form-block__back">
 </section>

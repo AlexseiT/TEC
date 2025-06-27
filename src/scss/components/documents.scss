@@ -23,6 +23,15 @@
         &:last-child{
             border-right: 1px solid #E6E6E7;
         }
+        &:not(:hover)
+        {
+            .product__file-icon-tag{
+                color: white;
+                background-color: rgba(175, 175, 177, 1);
+                border-color: rgba(175, 175, 177, 1);
+            }
+        }
+ 
         &:hover{
             opacity: 1;
             background-color: #E6E6E7;
@@ -40,6 +49,7 @@
                 }
             }
         }
+
     }
 
     &__card-img-wrapper {
@@ -96,5 +106,67 @@
     }
 
     &__swiper-pagination {
+    }
+
+    &__card-file-wrapper{
+        position: relative;
+        width: 40px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    &__content{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .documents__swiper{
+            margin: 0;
+        }
+    }
+
+    &__tabs {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    &__tab {
+        width: max-content;
+        flex-shrink: 0;
+        a{
+            width: max-content;
+            flex-shrink: 0;
+            color: rgba(108, 108, 110, 1);
+            border-bottom: transparent;
+            padding-bottom: 4px;
+            &:hover{
+                color: #E66410;  
+                border-bottom: 1px solid #E66410;
+            }
+        }
+        &.uk-active{
+            a{
+                color: #E66410;  
+                border-bottom: 1px solid #E66410;
+            }
+        }
+    }
+}
+@include media($mobile) {
+    .documents {
+        &__content{
+            margin-top: 32px;
+        }
+        &__card {
+            padding: 16px;
+        }
+        &__swiper{
+            padding-right: 0px;
+        }
     }
 }
