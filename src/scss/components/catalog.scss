@@ -263,4 +263,15 @@
     .product__card-img-wrapper{
         height: 200px;
     }
+    .catalog-offer {
+
+        &__title-block {
+            margin-bottom: 32px;
+
+        }
+
+    }
+}
+.catalog-offer-product__title{
+    margin: 0;
 }

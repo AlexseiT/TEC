@@ -156,6 +156,22 @@ function initSliders() {
             }
         }
     });
+    window.servicesProduct = new Swiper('.services-product__swiper', {
+        spaceBetween: 32,
+        slidesPerView: 1,
+        thumbs: {
+            swiper: window.servicesProduct
+        },
+        pagination: {
+            el: '.services-product__swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            }
+        }
+    });
 }
 function targetingElements()
 {

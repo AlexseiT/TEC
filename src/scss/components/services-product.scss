@@ -1,0 +1,70 @@
+.services-product {
+
+    &__container {
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__swiper {
+    }
+
+    &__swiper-wrapper {
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        transition: .3s;
+        padding: 12px 44px 12px 12px;
+        border-right: 1px solid rgba(230, 230, 231, 1);
+        &:hover{
+            opacity: 1;
+            background-color: rgba(230, 230, 231, 1);
+            border-radius: 14px;
+        }
+    }
+
+    &__card-img {
+        width: 100%;
+        height: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+
+    &__card-title {
+        color: rgba(38, 38, 38, 1);
+        margin-top: 16px;
+    }
+
+    &__card-text {
+        color: rgba(69, 68, 70, 1);
+        margin-top: 42px;
+    }
+
+    &__card-tag {
+        color: rgba(38, 38, 38, 1);
+        border-bottom: 1px solid rgba(38, 38, 38, 1);
+        margin-top: 16px;
+        width: fit-content;
+    }
+
+    &__swiper-pagination {
+    }
+}
+@include media($mobile) {
+    .services-product {
+        &__card {
+            padding: 12px;
+            border-right: unset;
+        }
+        &__card-img {
+            height: 220px;
+        }
+    }
+}
