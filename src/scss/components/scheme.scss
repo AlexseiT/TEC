@@ -1,0 +1,94 @@
+.scheme {
+
+		&__container {
+            display: flex;
+            gap: 55px;
+            align-items: stretch;
+		}
+
+		&__img-swiper {
+            height: auto;
+            width: 49%;
+		}
+
+		&__img-slide {
+            overflow: hidden;
+            border-radius: 12px;
+		}
+
+		&__content {
+            height: 100%;
+            width: 51%;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+		}
+
+		&__title {
+            margin: 0 0 52px 0;
+		}
+
+		&__content-swiper {
+            width: 100% !important;
+		}
+
+		&__content-slide {
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__slide-title {
+		}
+
+		&__slide-description {
+            margin-top: 30px;
+            width: 100%;
+		}
+
+		&__slide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+            .advantages__block-card-text{
+                max-width: 100%;
+            }
+		}
+
+		&__slide-number {
+            margin-top: 60px;
+		}
+
+		&__swiper-buttons {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+		}
+
+		&__swiper-button {
+            transition: .3s;
+            &.swiper-button-disabled{
+                opacity: 0.5;
+            }
+            cursor: pointer;
+		}
+
+		&__swiper-button-prev {
+            .scheme__swiper-button-ico{
+                transform: rotate(180deg);
+            }
+		}
+
+		&__swiper-button-ico {
+            fill: transparent;
+		}
+
+		&__swiper-button-next {
+		}
+}

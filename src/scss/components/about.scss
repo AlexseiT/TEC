@@ -1,0 +1,145 @@
+.about-company {
+
+		&_order {
+            .about-company__container{
+                display: flex;
+                flex-direction: row-reverse;
+            }
+		}
+
+		&__container {
+            display: flex;
+            gap: 56px;
+            align-items: stretch;
+		}
+
+		&__content {
+            width: 45%;
+            height: auto;
+		}
+
+		&__title {
+            margin: 0;
+		}
+
+		&__text {
+            margin-top: 32px;
+		}
+
+		&__img {
+            width: 55%;
+            height: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+		}
+}
+
+.section {
+
+		// .section_padding
+
+		&_padding {
+		}
+}
+.about-mission {
+        background-color: rgba(69, 68, 70, 1);
+		&__container {
+            display: flex;
+            gap: 32px;
+            align-items: start;
+            justify-content: space-between;
+		}
+
+		&__title {
+            margin: 0;
+            color: white;
+            max-width: 563px;
+		}
+
+		&__content {
+            max-width: 614px;
+            *{
+                color: white;
+            }
+		}
+}
+
+.about-grid {
+
+		&__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		&__card {
+            padding: 0 24px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-top: 1px solid rgba(208, 208, 209, 1);
+            border-right: 1px solid rgba(208, 208, 209, 1);
+            &:nth-child(n+3){
+                padding: 16px 24px 24px 24px;
+            }
+            &:nth-child(1){
+                border-top: none;
+            }
+            &:nth-child(2){
+                border-top: none;   
+            }
+            &:nth-child(3){
+                border-top: none;
+            }
+            &:nth-child(3n){
+                border-right: none;
+            }
+		}
+
+		&__card-title-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+		}
+
+		&__card-title {
+		}
+
+		&__card-text {
+		}
+}
+
+
+.about-team {
+        background-color: rgba(69, 68, 70, 1);
+		&__container {
+		}
+
+		&__title {
+            margin: 0;
+            color: white;
+		}
+
+		&__group {
+            margin-top: 60px;
+		}
+
+		&__group-title {
+            color: white;
+		}
+
+		&__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 32px;
+            margin-top: 32px;
+		}
+
+		&__card {
+            .contacts-block__person-title{
+                color: white;
+            }
+		}
+}

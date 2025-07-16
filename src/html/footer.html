@@ -46,3 +46,22 @@
         </div>
     </div>
 </footer>
+<a class="uk-button uk-button-default" href="#form-modal" uk-toggle>Open</a>
+
+<div id="form-modal" class="uk-flex-top form-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical form-modal__wrapper">
+        <button class="uk-modal-close-default form-modal__close" type="button" uk-close></button>
+        <form class = "form form-modal__content">
+            <span class = "text_40 text_mobile_40 text_manrope text_semibold form-modal__title">Отправить заявку</span>
+            <span class = "text_14 form-modal__description">На позицию “Автоматизация АЗС”</span>
+            <div class="form-block__form-inputs">
+                <input class="form__input form__input_opacity form-block__form-input-double" name="name" placeholder="ФИО*" required>
+                <input class="form__input form__input_opacity" name="phone" placeholder="Email*" required>
+                <input class="form__input form__input_opacity" name="phone" placeholder="Телефон">
+                <textarea class="form__input form__input_opacity form-block__form-input-double form__input-textarea" placeholder="Комментарий"></textarea>
+            </div>
+            <button class="text_16 btn btn_medium fade-group btn_orange form-modal__button">Отправить отклик</button>
+            <span class = "text_14 form-modal__text-bottom">Нажимая на кнопку «ОТПРАВИТЬ ЗАЯВКУ» Вы соглашаетесь на обработку персональных данных.</span>
+        </form>
+    </div>
+</div>

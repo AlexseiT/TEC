@@ -3,3 +3,84 @@
 <script src="static/matter.min.js"></script>
 -->
 <script src="js/app.min.js" type="module"></script>
+<script>
+    function InitMapContacts() {
+        let map_objects = document.querySelectorAll(".map-object");
+        map_objects.forEach(map_object => {
+            let start_lat = parseFloat(map_object.getAttribute("data-lat"));
+            let start_lon = parseFloat(map_object.getAttribute("data-lon"));
+            let map = new ymaps.Map(map_object, {
+                center: [start_lat, start_lon],
+                zoom: 14,
+                controls: ['zoomControl'],
+            });
+            /*let placemark = new ymaps.Placemark(
+            [start_lat, start_lon], {
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: '/wp-content/themes/amfora/assets/images/point.png',
+                iconImageSize: [31, 40]
+            }
+            );
+            map.geoObjects.add(placemark);*/
+        });
+
+    }
+
+    let loadedAnalytics = false,
+        timerId;
+
+    if (navigator.userAgent.indexOf('YandexMetrika') > -1) {
+        loadAnalytics();
+    } 
+    else {
+        window.addEventListener('scroll', loadAnalytics, {
+        passive: true
+        });
+        window.addEventListener('touchstart', loadAnalytics, {
+        passive: true
+        });
+        document.addEventListener('mouseenter', loadAnalytics, {
+        passive: true
+        });
+        document.addEventListener('click', loadAnalytics, {
+        passive: true
+        });
+        document.addEventListener('DOMContentLoaded', loadAnalytics, {});
+    }
+
+    function loadAnalytics(e) {
+        if (loadedAnalytics) {
+        return;
+        }
+
+        setTimeout(
+        function() {
+            // ya map
+            let mapsScript = document.createElement("script");
+            let apiKey = 'a814767b-9ac1-4885-b50e-23ea98324ad8';
+            mapsScript.src = 'https://api-maps.yandex.ru/2.1-dev/?apikey='+apiKey+'&lang=ru_RU&_v=20240627190140';
+            document.head.append(mapsScript);
+            mapsScript.onload = function() {
+            ymaps.ready(function() {
+                InitMapContacts();
+            })
+            };
+
+        }, 100
+        );
+
+
+        loadedAnalytics = true;
+        clearTimeout(timerId);
+        window.removeEventListener('scroll', loadAnalytics, {
+        passive: true
+        });
+        window.removeEventListener('touchstart', loadAnalytics, {
+        passive: true
+        });
+        document.removeEventListener('mouseenter', loadAnalytics);
+        document.removeEventListener('click', loadAnalytics);
+    }
+
+</script>

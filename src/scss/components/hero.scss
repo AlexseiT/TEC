@@ -202,9 +202,6 @@
     &__advantages-card-text {
         color: #878789;
     }
-    &__slide-top-buttons{
-        flex-direction: column;
-    }
     &__slide-top-button{
         width: 100%;
     }
@@ -235,6 +232,9 @@
         }
         &__swiper-pagination{
             display: none;
+        }
+        &__slide-top-buttons{
+            flex-direction: column;
         }
     }
 }

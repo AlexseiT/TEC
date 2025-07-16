@@ -27,45 +27,59 @@ a {
 .text {
     &_72 {
         font-size: 72px;
+        line-height: 1.2;
     }
     &_68 {
         font-size: 68px;
+        line-height: 1.2;
     }
     &_64 {
         font-size: 64px;
+        line-height: 1.2;
     }
     &_56 {
         font-size: 56px;
+        line-height: 1.2;
     }
     &_48 {
         font-size: 48px;
+        line-height: 1.2;
     }
     &_40 {
         font-size: 40px;
+        line-height: 1.2;
     }
     &_32 {
         font-size: 32px;
+        line-height: 1.2;
     }
     &_28 {
         font-size: 28px;
+        line-height: 1.4;
     }
     &_24 {
         font-size: 24px;
+        line-height: 1.4;
     }
     &_20 {
         font-size: 20px;
+        line-height: 1.4;
     }
     &_18 {
         font-size: 18px;
+        line-height: 1.4;
     }
     &_16 {
         font-size: 16px;
+        line-height: 1.4;
     }
     &_14 {
         font-size: 14px;
+        line-height: 1.4;
     }
     &_12 {
         font-size: 12px;
+        line-height: 1.4;
     }
     &_bold {
         font-weight: 900;
@@ -182,17 +196,42 @@ a {
 }
 
 .section {
-    padding-top: 90px;
+    margin-top: 90px;
     &_first {
-        padding-top: 94px;
+        margin-top: 94px;
+    }
+    &_padding{
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    &_padding-bottom{
+        padding-bottom: 90px;
+    }
+    &_padding-top{
+        padding-top: 90px;
     }
 }
-
+.section_hero{
+    padding-top: 216px;
+}
 @include media($tablet) {
+    .section_hero{
+        padding-top: 130px;
+    }
     .section {
-        padding-top: 60px;
+        margin-top: 60px;
         &_first {
-            padding-top: 64px;
+            margin-top: 60px;
+        }
+        &_padding{
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        &_padding-bottom{
+            padding-bottom: 60px;
+        }
+        &_padding-top{
+            padding-top: 60px;
         }
     }
     .text_mobile {
@@ -387,4 +426,14 @@ a {
 		&__title {
             margin: 0;
 		}
+}
+.scale_anim {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: scale_anim 25s infinite;
+    pointer-events: none;
+}
+textarea {
+    resize: none;
 }

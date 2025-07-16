@@ -1,5 +1,15 @@
 .advantages {
     padding-top: 216px;
+    &_dark{
+        background-color: rgba(69, 68, 70, 1);
+        padding-top: 0px;
+        .advantages__title, .advantages__block-card-title{
+            color: white;
+        }
+        .advantages__block-text, .advantages__block-card-text{
+            color: rgba(175, 175, 177, 1);
+        }
+    }
     &__container {
         display: flex;
         align-items: start;

@@ -1,0 +1,54 @@
+.about-services {
+
+		&__container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+		}
+
+		&__content {
+            display: flex;
+            gap: 56px;
+		}
+
+		&__content-left {
+            display: flex;
+            flex-direction: column;
+            gap: 52px;
+            width: 45%;
+		}
+
+		&__title {
+            margin: 0;
+		}
+
+		&__content-text {
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__content-img {
+            overflow: hidden;
+            border-radius: 12px;
+            width: 55%;
+		}
+
+		&__cards {
+            display: flex;
+            gap: 32px;
+            /*justify-content: space-between;*/
+		}
+
+		&__card {
+            flex-direction: row;
+		}
+}
+
+.advantages {
+		&__block-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+		}
+}
+

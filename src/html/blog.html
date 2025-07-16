@@ -1,0 +1,83 @@
+<section class = "section_first">
+
+</section>
+<section class = "blog__filter">
+    <div class = "container blog__container">
+        <form id = "blog-filter" class = "blog__form">
+            <div class = "blog__tags text_14">
+                <input id = "blog-tag" name = "tag" type = "text" hidden>
+                <span id = "blog-tag-all" class = "blog__tag active" data-tag = "">Все</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "1">Новости</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "2">Услуги</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "3">Проекты</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "4">АЗС</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "5">Строительство</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "6">Автоматизация</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "7">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "8">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "9">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "10">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "11">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "7">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "8">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "9">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "10">Тест</span>
+                <span class = "blog__tag blog-tag-checkbox" data-tag = "11">Тест</span>
+                <span id = "blog-tag-open-more" class = "blog__tag hidden"></span>
+            </div>
+            <div class = "blog__sort">
+                <input id = "blog-sort" name = "sort" type = "text" value = "ASC" hidden>
+                <button class="blog__sort-button text_16" type="button">
+                    <div class = "blog__sort-button-burger"><img src="@img/icons/burger-sort.svg" alt = "icon"></div>
+                    <span id = "blog-sort-text">Сначала новые</span>
+                    <div class = "blog__sort-button-arrow"><img src="@img/icons/arrow-selector.svg" alt = "icon"></div>
+                </button>
+                <div uk-dropdown class = "blog__sort-dropdown text_14">
+                    <div class = "blog__sort-dropdown-list">
+                        <span class = "blog__sort-item blog-sort-checkbox" data-sort = "ASC">Сначала новые</span>
+                        <span class = "blog__sort-item blog-sort-checkbox" data-sort = "DESC">Сначала старые</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<section class = "blog__grid-section">
+    <div class = "container blog__container">
+        <div class = "blog__grid">
+
+            <div class = "blog__card">
+                <div class = "blog__card-img-wrapper">
+                    <div class = "blog__card-tags text_14">
+                        <span class = "blog__card-tag">Новости</span>
+                        <span class = "blog__card-tag">Проекты</span>
+                        <span class = "blog__card-tag">АЗС</span>
+                    </div>
+                    <img src="@img/slider_case.jpg" alt="">
+                </div>
+                <div class = "blog__card-author">
+                    <div class = "blog__card-author-content">
+                        <div class = "blog__card-author-icon">
+                            <img src="@img/slider_case.jpg" alt="">
+                        </div>
+                        <div class = "blog__card-author-text">
+                            <span class="text_18 text_semibold text_manrope blog__card-author-name">Руслан Карпов</span>
+                            <span class = "text_14 blog__card-author-date">20.09.2024</span>
+                        </div>
+                    </div>
+                    <div class = "blog__card-author-time">
+                        <img src="@img/icons/timer.svg" alt="">
+                        <span class = "text_14 blog__card-author-time-text">~ 7 минут</span>
+                    </div>
+                </div>
+                <span class = "text_18 text_semibold text_manrope blog__card-title">Дизельное топливо: определение, назначение, характеристики</span>
+                <span class = "text_16 blog__card-description">Lorem ipsum dolor sit amet consectetur. Enim pellentesque quis neque mauris...</span>
+                <div class = "blog__card-bottom">
+                    <span class = "text_14 blog__card-bottom-text">Читать</span>
+                    <div class = "blog__card-bottom-ico"><img src="@img/icons/link-arrow.svg" class = "blog__card-bottom-ico-img" uk-svg></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

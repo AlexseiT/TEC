@@ -68,3 +68,27 @@
         }
     }
 }
+.services {
+
+		&__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 0;
+		}
+        &__card{
+            &:nth-child(2n){
+                padding-left: 16px;
+            }
+            &:nth-child(2n-1){
+                padding-right: 16px;
+            }
+            &:nth-child(n+3){
+                padding-top: 32px;
+                border-top: 1px solid rgba(208, 208, 209, 1);
+            }
+            .services-product__card{
+                padding: 12px;
+                border-right: none;
+            }
+        }
+}

@@ -47,11 +47,15 @@
     }
 
     &__contacts-link {
-        color: #F58220;
+        color: white;
+        &:hover{
+           color: #F58220;        
+           opacity: 1; 
+        }
     }
 
     &__contacts-text {
-        color: white;;
+        color: white;
     }
 
     &__buttons {

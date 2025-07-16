@@ -91,11 +91,11 @@ function initSliders() {
             }
         }
     });
-    window.decisionsSlider = new Swiper('.case-offer__swiper', {
+    window.caseOfferSlider = new Swiper('.case-offer__swiper', {
         spaceBetween: 32,
         slidesPerView: 1,
         thumbs: {
-            swiper: window.decisionsSlider
+            swiper: window.caseOfferSlider
         },
         pagination: {
             el: '.case-offer__swiper-pagination',
@@ -172,6 +172,44 @@ function initSliders() {
             }
         }
     });
+    window.automationSlider = new Swiper('.automation__swiper', {
+        spaceBetween: 32,
+        slidesPerView: 1,
+        thumbs: {
+            swiper: window.automationSlider
+        },
+        pagination: {
+            el: '.automation__swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1100: {
+                slidesPerView: 3,
+            }
+        }
+    });
+    window.processSlider = new Swiper('.process__swiper', {
+        spaceBetween: 32,
+        slidesPerView: 1,
+        thumbs: {
+            swiper: window.processSlider
+        },
+        pagination: {
+            el: '.process__swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1100: {
+                slidesPerView: 3,
+            }
+        }
+    });
 }
 function targetingElements()
 {
@@ -222,7 +260,6 @@ function toggleElementsClick()
     });
 
 }
-
 function includeDataElements()
 {
     let includeItems = document.querySelectorAll('.include-item');
@@ -745,6 +782,34 @@ function initProductSliders()
     });
 
 }
+/* Слайдеры схемы работ */
+function initSchemeSliders()
+{
+    const mainSwiper = new Swiper('.scheme__content-swiper', {
+        loop: false,
+        spaceBetween: 32,
+        navigation: {
+        nextEl: '.scheme__swiper-button-next',
+        prevEl: '.scheme__swiper-button-prev',
+        },
+    });
+
+    const thumbsSwiper = new Swiper('.scheme__img-swiper', {
+        loop: false,
+        spaceBetween: 32,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    mainSwiper.controller.control = thumbsSwiper;
+    thumbsSwiper.controller.control = mainSwiper;
+
+    document.querySelectorAll('.scheme__img-swiper .swiper-slide').forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            mainSwiper.slideTo(index);
+        });
+    });
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     initAdaptiveScrollHeader();
     initSliders();
@@ -766,4 +831,99 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initRangeFilterItemController();
     selectFilterItemController();
     initProductSliders();
+    initSchemeSliders();
 });
+
+function initBlogFilter()
+{
+    // TAG
+
+    let tags = document.querySelectorAll(".blog-tag-checkbox");
+    let tag_open_more = document.getElementById("blog-tag-open-more");
+    let input_tag = document.getElementById("blog-tag");
+    let tag_all = document.getElementById("blog-tag-all");
+
+    let count_tags = 6;
+    if(isMobile) count_tags = 2;
+    if (tags.length > count_tags)
+    {
+        let index = 1;
+        tags.forEach(tag => {
+            if (index > count_tags) tag.classList.add("hidden");
+            index += 1;
+        });
+        tag_open_more.classList.remove("hidden");
+        tag_open_more.innerHTML = "+" + (tags.length - count_tags);
+    }
+    if (tag_open_more){
+        tag_open_more.addEventListener('click', (event) => {
+            tag_open_more.classList.add("hidden");
+            tags.forEach(tag => {
+                tag.classList.remove("hidden");
+            });
+        });
+    }
+    function Ajax()
+    {
+
+    }
+    function inputActiveControll()
+    {
+        input_tag.value = "";
+        let active_elements = document.querySelectorAll(".blog-tag-checkbox.active");
+        let check = true;
+        if (active_elements.length > 0) {
+            input_tag.value += "[";
+            if (tag_all) tag_all.classList.remove("active");
+        }
+        if (active_elements.length == 0) 
+        {
+            if (tag_all) tag_all.classList.add("active");
+        }
+        active_elements.forEach(tag => {
+            let symbol = ", ";
+            if (check)
+            {
+                check = false;
+                symbol = "";
+            }
+            input_tag.value += symbol + '"' +tag.getAttribute("data-tag") + '"';
+        });
+        if (active_elements.length > 0) {
+            input_tag.value += "]";
+        }
+        Ajax();
+    }
+    
+    tags.forEach(tag => {
+        tag.addEventListener('click', (event) => {
+            tag.classList.toggle("active");
+            inputActiveControll();
+        });
+    });
+    if (tag_all){
+        tag_all.addEventListener('click', (event) => {
+            let active_elements = document.querySelectorAll(".blog-tag-checkbox.active");
+            active_elements.forEach(tag => {
+                tag.classList.remove("active");
+            });
+            inputActiveControll();
+        });
+    }
+
+    // SORT
+    let input_sort = document.getElementById("blog-sort");
+    let text_sort = document.getElementById("blog-sort-text");
+    let sorts = document.querySelectorAll(".blog-sort-checkbox");
+    sorts.forEach(element => {
+        element.addEventListener('click', (event) => {
+            if (text_sort) text_sort.innerHTML = element.innerHTML;
+            if (input_sort) input_sort.value = element.getAttribute("data-sort");
+            Ajax();
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', (event) => {
+    initBlogFilter();
+});
+

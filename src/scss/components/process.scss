@@ -1,0 +1,60 @@
+.process {
+        background-color: rgba(69, 68, 70, 1);
+		&__container {
+		}
+
+		&__title {
+            color: white;
+            margin: 0;
+		}
+
+		&__button {
+		}
+
+		&__swiper {
+            margin-top: 60px;
+            overflow: visible;
+		}
+
+		&__card {
+            display: flex;
+            flex-direction: column;
+            *{
+                color: rgba(108, 108, 110, 1);
+            }
+            &:hover{
+                .process__card-title{
+                    color: white;
+                }
+                .process__card-number{
+                    color: white;
+                    border-color: rgba(230, 100, 16, 1);
+                }
+                .process__card-description{
+                    color: rgba(175, 175, 177, 1);
+                }
+            }
+		}
+
+		&__card-number {
+            width: 100%;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(108, 108, 110, 1);
+            transition: .3s;
+		}
+
+		&__card-title {
+            transition: .3s;
+            margin-top: 32px;
+            padding-right: 38px;
+		}
+
+		&__card-description {
+            transition: .3s;
+            margin-top: 24px;
+            padding-right: 38px;
+		}
+
+		&__swiper-pagination {
+		}
+}

@@ -4,6 +4,28 @@
         overflow: hidden;
         margin-top: 90px;
         padding: 20px 0;
+        &_dark{
+            background-color: rgba(69, 68, 70, 1);
+            padding: 90px 0;
+            .form-block__form{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 52px;
+                justify-content: space-between;
+                align-items: start;
+            }
+            .form-block__form-left{
+                display: flex;
+                flex-direction: column;
+                max-width: 510px;
+            }   
+            .form-block__form-right{
+                display: flex;
+                flex-direction: column;
+                max-width: 529px;
+            }
+        }
 		&__container {
             display: flex;
             align-items: stretch;
@@ -94,5 +116,70 @@
             flex-direction: column;
             gap: 20px;
         }
+    }
+}
+
+
+
+.form-modal {
+
+		&__wrapper {
+            background-color: rgba(69, 68, 70, 1);
+            border-radius: 12px;
+            padding: 24px 32px;
+            max-width: 616px;
+		}
+
+		&__close {
+            top: 36px;
+            right: 32px;
+            color: white;
+            &:hover{
+                color: rgb(230, 100, 16);
+            }
+		}
+
+		&__content {
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__title {
+            color: white;
+		}
+
+		&__description {
+            color: rgba(175, 175, 177, 1);
+            margin-top: 12px;
+		}
+
+		&__button {
+            margin-top: 32px;
+		}
+
+		&__text-bottom {
+            color: rgba(135, 135, 137, 1);
+            margin-top: 20px;
+		}
+
+        .form-block__form-inputs{
+            margin-top: 24px;
+        }
+}
+
+
+
+@include media($mobile) {
+    .form-modal {
+
+        &__wrapper {
+            padding: 16px;
+        }
+
+        &__close {
+            top: 16px;
+            right: 16px;
+        }
+
     }
 }
