@@ -1,0 +1,234 @@
+
+.vacancy {
+
+		&_title {
+            margin: 0;
+		}
+
+		&__container {
+		}
+
+		&__grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 32px;
+		}
+
+		&__card {
+            &:hover{
+                opacity: 1;
+                background-color: #E6E6E7;
+                .vacancy__card-title{
+                    color: #da671b;
+                }
+            }
+            padding: 12px 12px 20px 12px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+		}
+
+		&__card-img {
+            overflow: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 252px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+		}
+
+		&__card-content {
+            margin-top: 12px;
+		}
+
+		&__card-title-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            justify-content: space-between;
+		}
+
+		&__card-title {
+            transition: .3s;
+		}
+
+		&__card-text {
+            color: rgba(175, 175, 177, 1);
+		}
+
+		&__card-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            justify-content: space-between;
+            margin-top: 18px;
+		}
+
+		&__card-more {
+		}
+
+		&__card-arrow {
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+		}
+}
+
+.vacancy-modal {
+
+		&__wrapper {
+            border-radius: 12px;
+            padding: 24px 32px;
+            max-width: 1230px !important;
+            width: 100%;
+		}
+
+		&__close {
+		}
+
+		&__content {
+            display: flex;
+            align-items: stretch;
+            gap: 32px;
+		}
+
+		&__about {
+            padding-right: 32px;
+            border-right: 1px solid rgba(208, 208, 209, 1);
+            display: flex;
+            flex-direction: column;
+            max-width: 550px;
+            width: 100%;
+		}
+
+		&__title {
+		}
+
+		&__about-work-up {
+            margin-top: 24px;
+            display: flex;
+            gap: 20px;
+		}
+
+		&__about-work-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+		}
+
+		&__about-work-title {
+            color: rgba(135, 135, 137, 1);
+		}
+
+		&__about-work-text {
+		}
+        &__about-more-title{
+            margin-top: 20px;
+        }
+		&__about-work-more {
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__about-work-content {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__about-button {
+            margin-top: 32px;
+		}
+
+		&__form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+		}
+
+		&__description {
+            margin-top: 12px;
+		}
+
+		&__text-bottom {
+		}
+}
+
+.form-block {
+
+		&__vacancy-file {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            .form-block__form-button{
+                width: fit-content;
+            }
+		}
+
+		&__vacancy-title {
+		}
+
+}
+@include media($tablet) {
+    .vacancy {
+        &__grid {
+            margin-top: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 0px;
+        }
+    }
+}
+@include media($mobile) {
+    .vacancy {
+		&__card {
+            padding: 8px;
+		}
+        &__card-img {
+            height: 150px;
+		}
+        &__card-content{
+            margin-top: 4px;
+        }
+        &__card-title-block{
+            margin-top: 0px;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+        }
+        &__card-link {
+            margin-top: 14px;
+		}
+    }
+    .vacancy-modal {
+        &__content{
+            flex-direction: column;
+            gap: 20px
+        }
+        &__about {
+            max-width: 100%;
+            width: 100%;
+            padding-right: 0px;
+            border-right: none;
+
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(208, 208, 209, 1);
+		}
+    }
+    .form-block__vacancy-file{
+        margin-top: 20px;
+    }
+    .vacancy-modal__about-button{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
